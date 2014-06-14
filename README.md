@@ -7,10 +7,7 @@ iOS 无障碍开发指导
 
 * Introduction 整篇
 * Understanding Accessibility on iOS 整篇
-* Making Your iOS App Accessible
-   * 开头到 Supply Accurate and Helpful Attribute Information 之前
-   * Supply Accurate and Helpful Attribute Information 到  Enhance the Accessibility of Table Views 之前
-   * Enhance the Accessibility of Table Views 到结尾
+* Making Your iOS App Accessible （@ria4com 认领）
 
 # 参与方式
 
