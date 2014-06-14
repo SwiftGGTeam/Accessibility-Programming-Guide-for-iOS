@@ -3,6 +3,8 @@ Accessibility-Programming-Guide-for-iOS
 
 iOS 无障碍开发指导
 
+原文地址：https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html
+
 # 当前进度
 
 * Introduction 整篇
