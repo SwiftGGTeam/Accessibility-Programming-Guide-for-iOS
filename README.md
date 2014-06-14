@@ -7,7 +7,7 @@ iOS 无障碍开发指导
 
 # 当前进度
 
-* Introduction 整篇
+* Introduction （@DonDon 认领）
 * Understanding Accessibility on iOS 整篇
 * Making Your iOS App Accessible （@ria4com 认领）
 
