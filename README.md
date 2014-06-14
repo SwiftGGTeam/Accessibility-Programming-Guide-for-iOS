@@ -5,7 +5,7 @@ iOS 无障碍开发指导
 
 # 当前进度
 
-* Introduction 整篇
+* Introduction 整篇 （@umcsdon 认领）
 * Understanding Accessibility on iOS 整篇
 * Making Your iOS App Accessible （@ria4com 认领）
 
@@ -17,8 +17,8 @@ iOS 无障碍开发指导
 4. 运行 `git checkout develop` 来切换到新分支
 5. 运行 `git remote add upstream https://github.com/numbbbbb/Accessibility-Programming-Guide-for-iOS.git` 把我的库添加为远端库
 6. 运行 `git remote update`更新
-7. 运行 `git fetch upstream gh-pages` 拉取我的库的更新到本地
-8. 运行 `git rebase upstream/gh-pages` 将我的更新合并到你的分支
+7. 运行 `git fetch upstream master` 拉取我的库的更新到本地
+8. 运行 `git rebase upstream/master` 将我的更新合并到你的分支
 
 # 开源协议
 
