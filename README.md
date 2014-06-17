@@ -9,7 +9,7 @@ iOS 无障碍开发指导
 
 * Introduction （完成 By @umcsdon）
 * Understanding Accessibility on iOS 整篇
-* Making Your iOS App Accessible 整篇
+* Making Your iOS App Accessible 整篇（@xiaooooo529 认领）
 
 # 参与方式
 
