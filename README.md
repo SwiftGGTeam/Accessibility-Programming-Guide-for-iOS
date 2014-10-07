@@ -5,6 +5,8 @@ iOS 无障碍开发指导
 
 原文地址：https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Introduction/Introduction.html
 
+中文版在线阅读：http://numbbbbb.gitbooks.io/ios-accessibility-programming-guide-in-chinese/
+
 # 当前进度
 
 翻译完成，欢迎参与校对。
