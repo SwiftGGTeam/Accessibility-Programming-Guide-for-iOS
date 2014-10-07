@@ -1,6 +1,8 @@
 让你的iOS APP支持无障碍使用
 ===============================
 
+> 翻译：[umcsdon](https://github.com/numbbbbb)
+
 要做到无障碍使用，一个iPhone应用必须支持用户使用VoiceOver访问用户界面上的元素。总体来说，这意味着你需要：
 
 - 让用户界面上每个需要进行交互的元素都可以无障碍使用，包括那些只用来显示信息的元素，比如静态文本和控件。
@@ -76,37 +78,37 @@
 
    _accessibleElements = [[NSMutableArray alloc] init];
 
- 
+
 
    /* Create an accessibility element to represent the first contained element and initialize it as a component of MultiFacetedView. */
 
    UIAccessibilityElement *element1 = [[[UIAccessibilityElement alloc] initWithAccessibilityContainer:self] autorelease];
 
- 
+
 
    /* Set attributes of the first contained element here. */
 
    [_accessibleElements addObject:element1];
 
- 
+
 
    /* Perform similar steps for the second contained element. */
 
    UIAccessibilityElement *element2 = [[[UIAccessibilityElement alloc] initWithAccessibilityContainer:self] autorelease];
 
- 
+
 
    /* Set attributes of the second contained element here. */
 
    [_accessibleElements addObject:element2];
 
- 
+
 
    return _accessibleElements;
 
 }
 
- 
+
 
 /* The container itself is not accessible, so MultiFacetedView should return NO in isAccessiblityElement. */
 
@@ -118,7 +120,7 @@
 
 }
 
- 
+
 
 /* The following methods are implementations of UIAccessibilityContainer protocol methods. */
 
@@ -130,7 +132,7 @@
 
 }
 
- 
+
 
 - (id)accessibilityElementAtIndex:(NSInteger)index
 
@@ -140,7 +142,7 @@
 
 }
 
- 
+
 
 - (NSInteger)indexOfAccessibilityElement:(id)element
 
@@ -272,11 +274,15 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
 可以使用Interface Builder设置元素的无障碍状态并提供自定义的标签、提示和特性属性的内容。具体的设置方法是，在你的nib文件中选择用户界面元素并打开Idendidy标签，可以在Accessibility部分看到下图的内容：
 
-[!图片1](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Art/ax_textfield_ib.png)
+**图 2-1** Interface Builder中所显示的标准文本框的默认无障碍信息。
+
+![!图片2](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Art/ax_textfield_ib.png)
 
 如图所示，nib文件中使用的标准的文本框默认是无障碍的，并且包含默认的标签、提示和特性属性的信息。（注意，对于包含占位符文字的文本框来说，默认标签是占位符文本。）你可以任意修改这些默认值，如下图所示（下图同样展示了Accessibility标签如何展示文本框的无障碍信息。具体的使用方法参见“在iOS模拟器中使用Accessibility Inspector调试无障碍性”）：
 
-[!图片2](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Art/ax_textfield_hint.png)
+**图 2-2** 在Interface Builder中修改无障碍信息。
+
+![图片3](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/iPhoneAccessibility/Art/ax_textfield_hint.png)
 
 #### 通过编程定义自定义属性信息
 
@@ -297,7 +303,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
 }
 
- 
+
 
 - (NSString *)accessibilityLabel
 
@@ -307,7 +313,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
 }
 
- 
+
 
 /* This custom view behaves like a button. */
 
@@ -319,7 +325,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
 }
 
- 
+
 
 - (NSString *)accessibilityHint
 
@@ -343,7 +349,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
   _view = [[MyCustomView alloc] initWithFrame:CGRectZero];
 
- 
+
 
   [_view setIsAccessibilityElement:YES];
 
@@ -388,7 +394,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
     NSString *weatherTempLabel = [self.weatherTemp accessibilityLabel];
 
- 
+
 
     /* Combine the city and temperature information so that VoiceOver users can get the weather information with one gesture. */
 
@@ -445,7 +451,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
 }
 
- 
+
 
 - (UIAccessibilityTraits)accessibilityTraits
 
@@ -453,7 +459,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
    UIAccessibilityTraits traits = [super accessibilityTraits] | UIAccessibilityTraitKeyboardKey;
 
- 
+
 
    /* If this is the shift key and it's selected, users need to know that shift is currently in effect. */
 
@@ -465,13 +471,13 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
    }
 
- 
+
 
    return traits;
 
 }
 
- 
+
 
 - (void)keyboardChangedToNumbers
 
@@ -479,11 +485,11 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
    /* Code to perform the change to a number keyboard here. */
 
- 
+
 
    /* Send a notification of this change to the screen layout. */
 
- 
+
 
    UIAccessibilityPostNotification(UIAccessibilityLayoutChangedNotification, nil);
 
@@ -503,7 +509,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
 /* Other subclass implementation code here. */
 
- 
+
 
 - (NSString *)accessibilityLabel
 
@@ -529,7 +535,7 @@ iOS SDK 3.0自带一个Interface Builder，其中包含应用无障碍性相关�
 
    }
 
- 
+
 
    return [NSString stringWithFormat:@"%d %@", starCount, ratingString];
 
